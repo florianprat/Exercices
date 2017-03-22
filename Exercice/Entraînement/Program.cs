@@ -10,9 +10,17 @@ namespace Entraînement
     {
         static void Main(string[] args)
         {
-            Demo();
+            // Demo();
+            AfficherPersonne("Cyril", "Seguenot");
+            AfficherPersonne("Robert", "Duval");
             Console.ReadKey();
         }
+
+        static void AfficherPersonne(string prénom, string nom)
+        {
+            Console.WriteLine("prénom : " + prénom + " nom : " + nom);
+        }
+
 
         static void Demo()
         {
