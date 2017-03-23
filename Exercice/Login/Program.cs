@@ -22,9 +22,9 @@ namespace Login
                     VerifLogin(login);
                     loginOK = true;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    Console.WriteLine("Le login doit comporter au moins 5 caractères");
+                    Console.WriteLine(e.Message);
                     loginOK = false;
                 }
             }
@@ -41,9 +41,9 @@ namespace Login
                     VerifMdp(mdp);
                     mdpOK = true;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    Console.WriteLine("Le mot de passe doit comporter au moins 6 caractères, au plus 12, et ne doit pas commencer ni finir par un espace");
+                    Console.WriteLine(e.Message);
                     mdpOK = false;
                 }
             }
