@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comptage_voyelles_consonnes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj", "{AEB74FC3-1D12-41E3-890B-7446D917F5AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compte_bancaire", "Compte_bancaire\Compte_bancaire.csproj", "{A0CD3BD7-B622-46EE-A3A6-DD055189C7BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boîtes", "Boîtes\Boîtes.csproj", "{62C10760-8C3D-4875-A20E-29D26B9777E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{AEB74FC3-1D12-41E3-890B-7446D917F5AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEB74FC3-1D12-41E3-890B-7446D917F5AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEB74FC3-1D12-41E3-890B-7446D917F5AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0CD3BD7-B622-46EE-A3A6-DD055189C7BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0CD3BD7-B622-46EE-A3A6-DD055189C7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0CD3BD7-B622-46EE-A3A6-DD055189C7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0CD3BD7-B622-46EE-A3A6-DD055189C7BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62C10760-8C3D-4875-A20E-29D26B9777E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62C10760-8C3D-4875-A20E-29D26B9777E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62C10760-8C3D-4875-A20E-29D26B9777E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62C10760-8C3D-4875-A20E-29D26B9777E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
