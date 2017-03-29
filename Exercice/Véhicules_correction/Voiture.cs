@@ -20,5 +20,17 @@ namespace Véhicules
             }
         }
 
+        public override double PRK
+        {
+            get
+            {
+                return 0.4;
+            }
+        }
+
+        public override void CalculerConso()
+        {
+            throw new NotImplementedException() ;
+        }
     }
 }
