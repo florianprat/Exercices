@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,9 @@ namespace Boites
 {
     public enum Couleurs { Blanc, bleu, Vert, Jaune, Orange, Rouge, Marron}
     public enum Matières { Carton, Plastique, Bois, Métal }
+
     
+
     public class Boite
     {
         
@@ -19,6 +22,7 @@ namespace Boites
         #endregion
 
         #region Propriétés
+        public SortedDictionary<string, Article> Articles { get; }
         public double Hauteur
         {
             get { return _hauteur; }
@@ -54,6 +58,7 @@ namespace Boites
         public Boite()
         {
             _compteur++;
+            Articles = new SortedDictionary<string, Article>();
         }
 
         public Boite(double haut, double large, double lgr) : this()

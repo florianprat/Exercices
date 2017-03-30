@@ -36,7 +36,9 @@ namespace Véhicules
             }
         }
 
-        abstract public double PRK { get; }
+        public abstract double PRK { get; }
+        public double Prix { get; }
+
         #endregion
 
         #region Constructeurs
@@ -46,24 +48,27 @@ namespace Véhicules
             _nbRoues = nbRoues;
             _energie = energie;
         }
+
+        public Vehicule(string nom, double prix)
+        {
+            _nom = nom;
+            Prix = prix;
+        }
         #endregion
 
-        public abstract void CalculerConso();
+        public abstract double CalculerConso();
 
         public int CompareTo(object obj)
         {
             if (obj is Vehicule)
             {
                 Vehicule v = (Vehicule)obj;
-                if (PRK < v.PRK)
-                    return -1;
-                else if (PRK == v.PRK)
-                    return 0;
-                return 1;
+                if (Prix < v.Prix) return -1;
+                else if (Prix > v.Prix) return 1;
+                else return 0;
             }
             else
                 throw new ArgumentException();
-
         }
     }
 }

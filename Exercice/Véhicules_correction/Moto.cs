@@ -8,9 +8,16 @@ namespace Véhicules
 {
     public class Moto : Vehicule
     {
+        #region Constructeurs
         public Moto(string nom, Energies energie) : base(nom, 2, energie)
         {
         }
+
+        public Moto(string nom, double prix) : base(nom, prix)
+        {
+        }
+        #endregion
+
 
         public override string Description
         {
@@ -28,9 +35,9 @@ namespace Véhicules
             }
         }
 
-        public override void CalculerConso()
+        public override double CalculerConso()
         {
-            throw new NotImplementedException() ;
+            throw new NotImplementedException();
         }
     }
 }
