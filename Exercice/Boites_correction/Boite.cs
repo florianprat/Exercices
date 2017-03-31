@@ -10,19 +10,20 @@ namespace Boites
     public enum Couleurs { Blanc, bleu, Vert, Jaune, Orange, Rouge, Marron}
     public enum Matières { Carton, Plastique, Bois, Métal }
 
-    
+
 
     public class Boite
     {
-        
         #region Champs privés
         private double _hauteur, _largeur, _longueur;
-        private static int _compteur = 0;
+        private static int _compteur;
         private Etiquette _etiquetteDest, _etiquetteFragile;
+
         #endregion
 
         #region Propriétés
         public SortedDictionary<string, Article> Articles { get; }
+
         public double Hauteur
         {
             get { return _hauteur; }
@@ -40,7 +41,7 @@ namespace Boites
 
         public double Volume
         {
-            get { return _hauteur * _largeur * _longueur; }
+            get { return Hauteur * _largeur * _longueur; }
         }
 
         public Couleurs Couleur { get; set; }
@@ -49,7 +50,10 @@ namespace Boites
 
         public static int Compteur
         {
-            get { return _compteur; }
+            get
+            {
+                return _compteur;
+            }
         }
 
         #endregion
@@ -60,36 +64,44 @@ namespace Boites
             _compteur++;
             Articles = new SortedDictionary<string, Article>();
         }
-
-        public Boite(double haut, double large, double lgr) : this()
+        public Boite(double haut, double larg, double longr) : this()
         {
             _hauteur = haut;
-            _largeur = large;
-            _longueur = lgr;
+            _largeur = larg;
+            _longueur = longr;
         }
 
-        public Boite(double haut, double large, double lgr, Matières mat) : this(haut, large, lgr)
+        public Boite(double haut, double larg, double longr, Matières mat) :
+            this(haut, larg, longr)
         {
             Matière = mat;
         }
+
         #endregion
 
         #region Méthodes publiques
         public void Etiqueter(string destinataire)
         {
-            _etiquetteDest = new Etiquette { Couleur = Couleurs.Blanc, Texte = "destinataire", Format = Formats.L};
-            //throw new NotImplementedException();
+            _etiquetteDest = new Etiquette
+            {
+                Couleur = Couleurs.Blanc,
+                Format = Formats.L,
+                Texte = destinataire
+            };
         }
 
-        public void Etiqueter(string destinataire, bool fragile) 
+        public void Etiqueter(string destinataire, bool fragile)
         {
             Etiqueter(destinataire);
             if (fragile)
             {
-                _etiquetteFragile = new Etiquette { Couleur = Couleurs.Rouge, Texte = "FRAGILE", Format = Formats.S };
+                _etiquetteFragile = new Etiquette
+                {
+                    Couleur = Couleurs.Rouge,
+                    Format = Formats.S,
+                    Texte = "FRAGILE"
+                };
             }
-            
-            //throw new NotImplementedException();
         }
 
         public void Etiqueter(Etiquette etqDest, Etiquette etqFragile)
@@ -98,17 +110,18 @@ namespace Boites
             _etiquetteFragile = etqFragile;
         }
 
-
         public bool Compare(Boite autreBoite)
         {
-            // Ou if() return true else return false
-            return (this.Hauteur == autreBoite.Hauteur && this.Largeur == autreBoite.Largeur &&
-                this.Longueur == autreBoite.Longueur && this.Matière == autreBoite.Matière);
+            if (this.Hauteur == autreBoite.Hauteur && this.Largeur == autreBoite.Largeur &&
+                this.Longueur == autreBoite.Longueur && this.Matière == autreBoite.Matière)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        
-
         #endregion
     }
-
-    
 }

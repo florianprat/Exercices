@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,11 +8,12 @@ using System.Threading.Tasks;
 namespace Véhicules
 {
     public enum Energies { Aucune, Essence, Gazole, GPL, Electrique }
-    public abstract class Vehicule : IComparable
+    public abstract class Vehicule : IComparable<Vehicule>
     {
         private string _nom;
         private int _nbRoues;
         private Energies _energie;
+        private decimal _prix;
 
         #region propriétés
         public string Nom
@@ -28,6 +30,11 @@ namespace Véhicules
             get { return _energie; }
         }
 
+        public decimal Prix
+        {
+            get { return _prix; }
+        }
+
         public virtual string Description
         {
             get
@@ -37,8 +44,6 @@ namespace Véhicules
         }
 
         public abstract double PRK { get; }
-        public double Prix { get; }
-
         #endregion
 
         #region Constructeurs
@@ -49,26 +54,19 @@ namespace Véhicules
             _energie = energie;
         }
 
-        public Vehicule(string nom, double prix)
+        public Vehicule(string nom, decimal prix)
         {
             _nom = nom;
-            Prix = prix;
+            _prix = prix;
         }
         #endregion
 
         public abstract double CalculerConso();
 
-        public int CompareTo(object obj)
+
+        public int CompareTo(Vehicule other)
         {
-            if (obj is Vehicule)
-            {
-                Vehicule v = (Vehicule)obj;
-                if (Prix < v.Prix) return -1;
-                else if (Prix > v.Prix) return 1;
-                else return 0;
-            }
-            else
-                throw new ArgumentException();
+            return _prix.CompareTo(other.Prix);
         }
     }
 }

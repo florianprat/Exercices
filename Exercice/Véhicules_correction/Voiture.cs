@@ -8,16 +8,13 @@ namespace Véhicules
 {
     public class Voiture : Vehicule
     {
-
-        #region Constructeurs
         public Voiture(string nom, Energies energie) : base(nom, 4, energie)
         {
         }
 
-        public Voiture(string nom, double prix) : base(nom, prix)
+        public Voiture(string nom, decimal prix) : base(nom, prix)
         {
         }
-        #endregion
 
 
         public override string Description
