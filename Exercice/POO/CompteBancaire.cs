@@ -2,7 +2,12 @@
 
 namespace POO
 {
-	public class CompteBancaire
+    public abstract class Component
+    {
+        public abstract string AfficherAlerte();
+    }
+
+    public class CompteBancaire : Component
 	{
 		#region Champs privés
 		private bool _aDécouvert;
@@ -121,6 +126,11 @@ namespace POO
 			_carte = new Carte (101) { NumCarte = 161616516, DateExpiration = dateExpir };
 		}
 
-		#endregion
-	}
+        public override string AfficherAlerte()
+        {
+            return string.Format("Compte n°{0} \nSolde : {1}",_numéro, _soldeCourant);
+        }
+
+        #endregion
+    }
 }

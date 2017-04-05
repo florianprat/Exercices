@@ -24,16 +24,25 @@ namespace POO
                 NumPremierChèque = 102001
             };
 
-            Console.WriteLine(carte.ToString());
-            Console.WriteLine(chq.ToString());
-            Console.WriteLine();
-            DateTime dateRenou = new DateTime(2016, 02, 25);
-            carte.Renouveler(dateRenou);
-            chq.Renouveler(new DateTime(2016, 05, 21));
-            Console.WriteLine(carte.ToString());
-            Console.WriteLine(chq.ToString());
+            CompteBancaire cpt = new CompteBancaire(36823223, DateTime.Today, - 100);
+            Alerte a = new Alerte(cpt);
+            Console.WriteLine(a.AfficherAlerte());
+            
+            
+            
+            //Console.WriteLine(alert.AfficherAlerte());
+            
 
-            Console.WriteLine();
+            //Console.WriteLine(carte.ToString());
+            //Console.WriteLine(chq.ToString());
+            //Console.WriteLine();
+            //DateTime dateRenou = new DateTime(2016, 02, 25);
+            //carte.Renouveler(dateRenou);
+            //chq.Renouveler(new DateTime(2016, 05, 21));
+            //Console.WriteLine(carte.ToString());
+            //Console.WriteLine(chq.ToString());
+
+            //Console.WriteLine();
 
             //MoyenPaiment[] tabMP = new MoyenPaiment[4];
             //tabMP[0] = new Carte(456);
