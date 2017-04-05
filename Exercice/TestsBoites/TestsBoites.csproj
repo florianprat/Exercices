@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BoitesC\BoitesCyril.csproj">
+    <ProjectReference Include="..\Boites_correction\Boites_correction.csproj">
       <Project>{e4e9b8e0-3ce9-4443-b4f7-bdfaab4d245f}</Project>
       <Name>BoitesCyril</Name>
     </ProjectReference>

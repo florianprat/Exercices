@@ -2,7 +2,7 @@
 
 namespace POO
 {
-	public enum Boissons { CaféNoir, CaféCrème, Thé, PotageTomate }
+    public enum Boissons { CaféNoir, CaféCrème, Thé, PotageTomate }
 
 	public class DistributeurBoisson
 	{
